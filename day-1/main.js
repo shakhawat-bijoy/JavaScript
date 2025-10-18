@@ -1,16 +1,29 @@
 console.log("Hello World");
 console.log("First Line of Code");
 
-alert("Welcome to JavaScript!");
+// alert("Welcome to JavaScript!");
 
-// Confirm Box Example
-if (confirm("Press a button!")) {
-   txt = "You pressed OK!";
-} else {
-   txt = "You pressed Cancel!";
-}
-// Prompt Box Example
-let person = prompt("Please enter your name", "Harry Potter");
-if (person != null) {
-   txt = "Hello " + person + "! How are you today?";
-}
+
+let name = 'Alice';
+const age = 22;
+var city = 'New York'
+
+console.log(name, age, city);
+
+let isAdult = age <= 23;
+console.log(isAdult);
+
+let gretting = `Hi, ${name}`
+console.log(gretting);
+
+
+
+let sum = 10 + 5;
+console.log(sum);
+
+let sub = 25 - 5;
+
+console.log(sub);
+
+
+
