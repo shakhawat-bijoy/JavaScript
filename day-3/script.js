@@ -383,4 +383,50 @@ if(i%3 ===0 && i%5 === 0){
 
 }
 
+
+// sum of arrey
+
+let a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+let sum = 0;
+
+for(let i = 0; i < a.length; i++){
+    sum = sum + a[i];
+}
+console.log(sum);
+
+
+// Sum of Even numbers in array
+
+let a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+let sum = 0;
+for(let i = 0; i < a.length; i++){
+    if(a[i]%2 === 0){
+        sum = sum + a[i];
+    }
+}
+console.log(sum);
+
+
+// sum of odds numbers in array
+
+let a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+let sum = 0;
+for(let i = 1; i < a.length; i++){
+    if(a[i]%2 === 1){
+        sum = sum + a[i];
+    }
+}
+console.log(sum);
+
 */
+
+// Count how many digits in a number
+
+let num = 123456780;
+let count = 0;
+
+while(num>0){
+    count++;
+    num = Math.floor(num/10);
+}
+console.log(count);
