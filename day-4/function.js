@@ -28,7 +28,6 @@ function abc(/* Parameter */) {
   // Function declaration & Statement
 }
 abc(/* Arguements */);
- 
 
 /* --Example of Parameter and Arguments-------- */
 
@@ -52,7 +51,7 @@ let num2 = Number(prompt('Put the second value'));
 add(num1, num2);
 */
 
-/* Default, Rest and Spread Parameter*/
+/* Default, Rest and Spread Parameter */
 
 // Default Parameter
 function add(v1 = 0, v2 = 0 /* Default Parameter */) {
@@ -81,7 +80,65 @@ function abcd(...value) {
 abcd(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
 // 2.
-function abc(a, b, c, ...value) {
+function mixed(a, b, c, ...value) {
   console.log(a, b, c, value);
 }
-abc(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+mixed(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+/* Return values and Early Returns */
+
+// Return values
+
+// Return mane holo: jeikhane theke function ke call kora hoy,
+// return likhe dile function oi jaigai result niye fire jabe.
+
+
+// Example 1.
+function ret() {
+  return 72;
+}
+
+
+let val = ret();
+console.log(val);
+
+// Example 2.
+
+function ret2(v){
+    return 23 + v;
+}
+
+
+let value = ret2(12)
+console.log(value);
+
+
+// Early Returns 
+
+// Early return মানে function-এর কাজ মাঝখানে থামিয়ে ফেলা।
+// কোনো condition মিলে গেলে আমরা চাই function আর সামনে এগোবে না। তখন return ব্যবহার করে function-কে আগেভাগেই থামিয়ে দিই।
+
+// Example:
+
+
+function checkAge(age) {
+    if (age < 18) {
+        return "Not allowed"; // Early return
+    }
+
+    return "Welcome!"; // রান করবে যখন age >= 18
+}
+
+console.log(checkAge(22)); 
+
+
+function isAdult(age){
+    if(age > 18){ return "You're an addult";}
+    return "Youre Teenage"
+}
+
+console.log(isAdult(prompt("What's your age?")));
+
+   
+
+
