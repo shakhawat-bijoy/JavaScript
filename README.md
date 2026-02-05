@@ -12,6 +12,8 @@ A comprehensive documentation of JavaScript fundamentals, from basics to advance
 4. [Day 4 - Functions Basics](#day-4---functions-basics)
 5. [Day 5 - Advanced Functions](#day-5---advanced-functions)
 6. [Function Practice - Q&A](#function-practice---qa)
+7. [Day 6 - Arrays & Advanced Methods](#day-6---arrays--advanced-methods)
+8. [Function Practice 2](#function-practice-2)
 
 ---
 
@@ -29,6 +31,7 @@ A comprehensive documentation of JavaScript fundamentals, from basics to advance
 ### Project: User Information Collector
 
 Created an interactive web application that:
+
 - Collects user's name, age, and favorite color
 - Calculates birth year
 - Determines adult status
@@ -49,7 +52,7 @@ let product = a * b;
 
 // Division (with zero check)
 if (b !== 0) {
-    let div = a / b;
+  let div = a / b;
 }
 
 // Modulo (remainder)
@@ -59,10 +62,10 @@ let reminder = a % b;
 let power = a ** b;
 
 // Increment & Decrement
-x++  // Post-increment
-++x  // Pre-increment
-x--  // Post-decrement
---x  // Pre-decrement
+x++; // Post-increment
+++x; // Pre-increment
+x--; // Post-decrement
+--x; // Pre-decrement
 ```
 
 ---
@@ -73,37 +76,39 @@ x--  // Post-decrement
 
 ```javascript
 if (condition) {
-    // code
+  // code
 } else if (anotherCondition) {
-    // code
+  // code
 } else {
-    // code
+  // code
 }
 ```
 
 ### Practical Examples
 
 **Grade Calculator:**
+
 ```javascript
 function getGrade(score) {
-    if (score >= 90 && score <= 100) return "A+";
-    else if (score >= 80 && score <= 89) return "A";
-    else if (score >= 70 && score <= 79) return "B";
-    else if (score >= 60 && score <= 69) return "C";
-    else if (score >= 33 && score <= 59) return "D";
-    else if (score >= 0 && score <= 32) return "Fail";
-    else return "Invalid Marks";
+  if (score >= 90 && score <= 100) return "A+";
+  else if (score >= 80 && score <= 89) return "A";
+  else if (score >= 70 && score <= 79) return "B";
+  else if (score >= 60 && score <= 69) return "C";
+  else if (score >= 33 && score <= 59) return "D";
+  else if (score >= 0 && score <= 32) return "Fail";
+  else return "Invalid Marks";
 }
 ```
 
 **Rock Paper Scissors Logic:**
+
 ```javascript
 function rps(user, computer) {
-    if (user === computer) return 'draw';
-    if (user === 'rock' && computer === 'scissor') return 'user';
-    if (user === 'paper' && computer === 'rock') return 'user';
-    if (user === 'scissor' && computer === 'paper') return 'user';
-    return 'computer';
+  if (user === computer) return "draw";
+  if (user === "rock" && computer === "scissor") return "user";
+  if (user === "paper" && computer === "rock") return "user";
+  if (user === "scissor" && computer === "paper") return "user";
+  return "computer";
 }
 ```
 
@@ -114,81 +119,90 @@ function rps(user, computer) {
 ### Loop Types
 
 **For Loop Pattern:**
+
 ```javascript
 for (start; end; change) {
-    // code
+  // code
 }
 ```
 
 **While Loop Pattern:**
+
 ```javascript
-start
+start;
 while (end) {
-    // code
-    change
+  // code
+  change;
 }
 ```
 
 **Do-While Loop:**
+
 ```javascript
 do {
-    // code
+  // code
 } while (condition);
 ```
 
 ### Loop Control Statements
 
 **Break Statement:**
+
 ```javascript
 for (let i = 1; i < 201; i++) {
-    console.log(i);
-    if (i === 32) break;  // Exit loop completely
+  console.log(i);
+  if (i === 32) break; // Exit loop completely
 }
 ```
 
 **Continue Statement:**
+
 ```javascript
 for (let i = 1; i < 201; i++) {
-    if (i === 32) continue;  // Skip this iteration
-    console.log(i);
+  if (i === 32) continue; // Skip this iteration
+  console.log(i);
 }
 ```
 
 ### Common Loop Patterns
 
 **Sum Pattern:**
+
 ```javascript
 let sum = 0;
 for (let i = 1; i <= 100; i++) {
-    sum = sum + i;
+  sum = sum + i;
 }
 console.log(sum);
 ```
 
 **Array Sum:**
+
 ```javascript
 let arr = [1, 2, 3, 4, 5];
 let sum = 0;
 for (let i = 0; i < arr.length; i++) {
-    sum = sum + arr[i];
+  sum = sum + arr[i];
 }
 ```
 
 **String Iteration:**
+
 ```javascript
 let word = "JavaScript";
 for (let i = 0; i < word.length; i++) {
-    console.log(word[i]);
+  console.log(word[i]);
 }
 ```
 
 **Counting Digits:**
+
 ```javascript
 let num = 123456780;
 let count = 0;
 while (num > 0) {
-    count++;
-    num = Math.floor(num / 10);
+  count++;
+  num = Math.floor(num / 10);
 }
 console.log(count);
 ```
@@ -206,43 +220,47 @@ console.log(count);
 ### Function Types
 
 **1. Function Declaration:**
+
 ```javascript
 function abc() {
-    // code
+  // code
 }
-abc();  // Function call
+abc(); // Function call
 ```
 
 **2. Function Expression:**
+
 ```javascript
-let xyz = function() {
-    // code
+let xyz = function () {
+  // code
 };
 ```
 
 **3. Arrow Function:**
+
 ```javascript
 let pqr = () => {
-    // code
+  // code
 };
 ```
 
 ### Parameters and Arguments
 
 ```javascript
-function welcome(name) {      // "name" is the Parameter
-    console.log(name);
+function welcome(name) {
+  // "name" is the Parameter
+  console.log(name);
 }
-welcome("Bijoy");            // "Bijoy" is the Argument
+welcome("Bijoy"); // "Bijoy" is the Argument
 ```
 
 ### Default Parameters
 
 ```javascript
 function add(v1 = 0, v2 = 0) {
-    console.log(v1 + v2);
+  console.log(v1 + v2);
 }
-add();  // Output: 0
+add(); // Output: 0
 ```
 
 ### Rest Parameters
@@ -251,13 +269,13 @@ The rest operator `(...)` collects remaining arguments into an array:
 
 ```javascript
 function abcd(...value) {
-    console.log(value);
+  console.log(value);
 }
 abcd(1, 2, 3, 4, 5);
 // Output: [1, 2, 3, 4, 5]
 
 function mixed(a, b, c, ...value) {
-    console.log(a, b, c, value);
+  console.log(a, b, c, value);
 }
 mixed(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 // Output: 1 2 3 [4, 5, 6, 7, 8, 9, 10]
@@ -267,10 +285,10 @@ mixed(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
 ```javascript
 function ret() {
-    return 72;
+  return 72;
 }
 let val = ret();
-console.log(val);  // Output: 72
+console.log(val); // Output: 72
 ```
 
 ### Early Returns
@@ -279,12 +297,12 @@ Stop function execution early when a condition is met:
 
 ```javascript
 function checkAge(age) {
-    if (age < 18) {
-        return "Not allowed";  // Early return
-    }
-    return "Welcome!";
+  if (age < 18) {
+    return "Not allowed"; // Early return
+  }
+  return "Welcome!";
 }
-console.log(checkAge(22));  // Output: Welcome!
+console.log(checkAge(22)); // Output: Welcome!
 ```
 
 ---
@@ -294,25 +312,27 @@ console.log(checkAge(22));  // Output: Welcome!
 ### Pure vs Impure Functions
 
 **Pure Function:**
+
 - Independent of the outside world
 - No side effects
 - Same input always produces same output
 
 ```javascript
 function pure(x) {
-    return x * 2;
+  return x * 2;
 }
 ```
 
 **Impure Function:**
+
 - Has side effects
 - Modifies external state
 
 ```javascript
 let a = 12;
 function impure() {
-    a++;
-    console.log(a);
+  a++;
+  console.log(a);
 }
 ```
 
@@ -322,10 +342,10 @@ A closure is a function having access to the parent scope, even after the parent
 
 ```javascript
 function closures() {
-    let c = 10;
-    return function() {
-        console.log(c);
-    };
+  let c = 10;
+  return function () {
+    console.log(c);
+  };
 }
 ```
 
@@ -335,14 +355,14 @@ The scope of a variable is determined by where it is defined in the code:
 
 ```javascript
 function lexical() {
-    let x = 15;
-    function defg() {
-        let y = 12;
-        function ghij() {
-            let z = 11;
-            // Can access x, y, and z here
-        }
+  let x = 15;
+  function defg() {
+    let y = 12;
+    function ghij() {
+      let z = 11;
+      // Can access x, y, and z here
     }
+  }
 }
 ```
 
@@ -351,43 +371,46 @@ function lexical() {
 A function that runs immediately after it's defined:
 
 ```javascript
-(function() {
-    console.log("IIFE");
+(function () {
+  console.log("IIFE");
 })();
 ```
 
 **Real-world use case (Data Privacy):**
+
 ```javascript
-let sher = (function() {
-    let score = 0;
-    return {
-        getScore: function() {
-            console.log(score);
-        },
-        setScore: function(val) {
-            score = val;
-        }
-    }
+let sher = (function () {
+  let score = 0;
+  return {
+    getScore: function () {
+      console.log(score);
+    },
+    setScore: function (val) {
+      score = val;
+    },
+  };
 })();
 ```
 
 ### Hoisting
 
 **Function Declaration (Hoisted):**
+
 ```javascript
-greet();  // ✅ Works!
+greet(); // ✅ Works!
 
 function greet() {
-    console.log("Hi");
+  console.log("Hi");
 }
 ```
 
 **Function Expression (Not Hoisted):**
-```javascript
-greet();  // ❌ Error!
 
-let greet = function() {
-    console.log("Hi");
+```javascript
+greet(); // ❌ Error!
+
+let greet = function () {
+  console.log("Hi");
 };
 ```
 
@@ -407,36 +430,163 @@ let greet = function() {
 ### Common Interview Questions
 
 **Q: What's the output?**
+
 ```javascript
 greet();
-var greet = function() {
-    console.log("Hi");
+var greet = function () {
+  console.log("Hi");
 };
 // Answer: Error - greet is not a function
 ```
 
 **Q: Convert to pure function:**
+
 ```javascript
 // Impure
 let total = 0;
 function addToTotal(num) {
-    total += num;
+  total += num;
 }
 
 // Pure
 function addToTotal(num) {
-    let newTotal = total;
-    newTotal += num;
-    return newTotal;
+  let newTotal = total;
+  newTotal += num;
+  return newTotal;
 }
 ```
 
 **Q: Identify higher-order function:**
+
 ```javascript
-[1, 2, 3].map(function(x) {
-    return x * 2;
+[1, 2, 3].map(function (x) {
+  return x * 2;
 });
 // Answer: map is the higher-order function
+```
+
+---
+
+## Day 6 - Arrays & Advanced Methods
+
+### Basic Array Operations
+
+```javascript
+let marks = [90, 88, 70, 80, 92, 86];
+
+// Access & Modify
+console.log(marks[2]); // 70
+marks[5] = 96;
+
+// Common Methods
+arr.push(7000); // Add to end
+arr.pop(); // Remove from end
+arr.shift(); // Remove from beginning
+arr.unshift(22); // Add to beginning
+arr.splice(3, 2); // Remove 2 elements starting from index 3
+let sub = arr.slice(0, 4); // Create new array from index 0 to 3
+arr.reverse(); // Reverse array in-place
+```
+
+### Sorting Arrays
+
+```javascript
+let sortArray = [68, 85, 44, 58, 38, 96];
+
+// Ascending Order
+sortArray.sort((a, b) => a - b);
+
+// Descending Order
+sortArray.sort((a, b) => b - a);
+```
+
+### Higher-Order Array Methods
+
+**1. forEach:**
+Iterates through each element.
+
+```javascript
+arr.forEach((val) => console.log(val + 5));
+```
+
+**2. map:**
+Transforms data into a new array.
+
+```javascript
+let doubled = arr.map((val) => val * 2);
+```
+
+**3. filter:**
+Creates a new array with elements that pass the test.
+
+```javascript
+let adults = ages.filter((age) => age >= 18);
+```
+
+**4. reduce:**
+Reduces array to a single value (sum, product, etc.).
+
+```javascript
+let sum = arr.reduce((acc, val) => acc + val, 0);
+```
+
+**5. find:**
+Returns the first element that matches the condition.
+
+```javascript
+let found = arr.find((val) => val === 11);
+```
+
+**6. some & every:**
+
+```javascript
+let hasLargeNum = arr.some((val) => val > 80); // True if any match
+let allLargeNum = arr.every((val) => val > 80); // True if all match
+```
+
+---
+
+## Function Practice 2
+
+### BMI Calculator
+
+```javascript
+function bmi(weight, height) {
+  return (weight / (height * height)).toFixed(2);
+}
+```
+
+### Resuable Discount (HOF)
+
+```javascript
+function discountCalculator(discount) {
+  return function (price) {
+    return price - price * (discount / 100);
+  };
+}
+const tenPercent = discountCalculator(10);
+console.log(tenPercent(200)); // 180
+```
+
+### Counter System (Closures)
+
+```javascript
+function counter() {
+  let count = 0;
+  return function () {
+    count++;
+    return count;
+  };
+}
+```
+
+### Scope Isolation (IIFE)
+
+```javascript
+(function () {
+  const internalSecret = "secure123";
+  console.log("Isolated scope");
+})();
 ```
 
 ---
@@ -459,6 +609,7 @@ function addToTotal(num) {
 ## Projects Completed
 
 ### Project 1: User Information Collector
+
 - Interactive form with validation
 - Dynamic result display
 - Age category determination
@@ -469,35 +620,29 @@ function addToTotal(num) {
 
 ## Next Steps
 
-- Learn about Arrays and Array Methods
 - Study Objects and Object-Oriented Programming
 - Explore Asynchronous JavaScript (Promises, Async/Await)
 - Practice DOM Manipulation
+- Debugging and Testing
 - Build more complex projects
 
 ---
 
 **Repository Structure:**
+
 ```
 ├── day-1/
-│   ├── Project One/
-│   ├── arithmetic.js
-│   └── main.js
 ├── day-2/
-│   └── script.js
 ├── day-3/
-│   └── script.js
 ├── day-4/
-│   ├── Function.md
-│   └── function.js
 ├── day-5/
-│   ├── Readme.md
-│   └── script.js
-└── Function Practice/
-    ├── README.md
-    └── script.js
+├── day-6/
+│   ├── Advance/
+│   └── Arrays/
+├── Function Practice/
+└── function practice 2/
 ```
 
 ---
 
-*This documentation represents a structured journey through JavaScript fundamentals, from basic syntax to advanced function concepts.*
+_This documentation represents a structured journey through JavaScript fundamentals, from basic syntax to advanced function concepts._
