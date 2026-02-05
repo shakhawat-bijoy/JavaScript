@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Theory & Interview Questions</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.6;
+        color: #d4d4d4;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #1e1e1e;
+      }
+      h1, h2, h3 {
+        color: #569cd6;
+      }
+      h1 {
+        border-bottom: 2px solid #569cd6;
+        padding-bottom: 20px;
+        text-align: center;
+      }
+      h2 {
+        border-bottom: 1px solid #333;
+        padding-bottom: 10px;
+        margin-top: 50px;
+        color: #4ec9b0;
+      }
+      .question-box {
+        background-color: #252526;
+        border-left: 5px solid #569cd6;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 4px;
+        transition: transform 0.2s;
+      }
+      .question-box:hover {
+        transform: translateX(5px);
+      }
+      .question-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      .question-title {
+        font-weight: bold;
+        color: #9cdcfe;
+        font-size: 1.1em;
+      }
+      .q-number {
+        background-color: #333;
+        color: #888;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 0.8em;
+      }
+      .answer-text {
+        color: #cccccc;
+      }
+      code {
+        font-family: "Consolas", "Courier New", monospace;
+        background-color: #3c3c3c;
+        padding: 2px 5px;
+        border-radius: 3px;
+        color: #ce9178;
+      }
+      pre {
+        background-color: #1e1e1e;
+        border: 1px solid #333;
+        color: #d4d4d4;
+        padding: 15px;
+        border-radius: 5px;
+        overflow-x: auto;
+        font-family: "Consolas", "Monaco", monospace;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>JavaScript Theory & Interview Questions</h1>
+    <p style="text-align: center; color: #858585;">Comprehensive Guide: Ordered by Question Number</p>
+
+    <!-- SECTION 1: Fundamentals (Q1-Q6) -->
+    <section>
+      <h2>Unit 1: Fundamentals (Q1 - Q6)</h2>
+
+      <div class="question-box">
+        <div class="question-header">
+          <span class="question-title">Function Declaration vs Expression</span>
+          <span class="q-number">Q1 - Q2</span>
+        </div>
+        <div class="answer-text">
+          <ul>
+            <li><strong>Function Declaration:</strong> Hoisted. Can be called <em>before</em> definition.</li>
+            <li><strong>Function Expression:</strong> Not hoisted. Must be defined before usage.</li>
+          </ul>
+<pre><code>// 1. Declaration (Works)
+greet(); 
+function greet() { console.log("Hi"); }
+
+// 2. Expression (Error)
+sayHi(); 
+var sayHi = function() { console.log("Hi"); }</code></pre>
+        </div>
+      </div>
+
+      <div class="question-box">
+        <div class="question-header">
+          <span class="question-title">Arrow Functions</span>
+          <span class="q-number">Q3</span>
+        </div>
+        <div class="answer-text">
+          <p>Concise syntax for functions.</p>
+<pre><code>let multiply = (a, b) => a * b;</code></pre>
+        </div>
+      </div>
+
+      <div class="question-box">
+        <div class="question-header">
+          <span class="question-title">var vs let vs const</span>
+          <span class="q-number">Q4</span>
+        </div>
+        <div class="answer-text">
+          <ul>
+            <li><strong>var:</strong> Function-scoped, hoisted, can be redeclared</li>
+            <li><strong>let:</strong> Block-scoped, hoisted but not initialized (TDZ), cannot be redeclared</li>
+            <li><strong>const:</strong> Block-scoped, must be initialized, cannot be reassigned</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="question-box">
+        <div class="question-header">
+          <span class="question-title">Temporal Dead Zone (TDZ)</span>
+          <span class="q-number">Q5</span>
+        </div>
+        <div class="answer-text">
+          <p>The time between entering a scope and the variable being declared where you cannot access the variable.</p>
+<pre><code>console.log(x); // ReferenceError (TDZ)
+let x = 5;</code></pre>
+        </div>
+      </div>
+
+      <div class="question-box">
+        <div class="question-header">
+          <span class="question-title">Scope Types</span>
+          <span class="q-number">Q6</span>
+        </div>
+        <div class="answer-text">
+          <ul>
+            <li><strong>Global Scope:</strong> Accessible everywhere</li>
+            <li><strong>Function Scope:</strong> Accessible only within function (var)</li>
+            <li><strong>Block Scope:</strong> Accessible within {} (let, const)</li>
+            <li><strong>Lexical Scope:</strong> Inner functions can access outer function variables</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Objects & Context (Q7-Q9) -->
+    <section>
+      <h2>Unit 2: Objects & Context (Q7 - Q9)</h2>
+
+      <div class="question-box">
+        <div class="question-header">
+          <span class="question-title">The 'this' Keyword</span>
+          <span class="q-number">Q7</span>
+        </div>
+        <div class="answer-text">
+          <p>Refers to the object that is executing the current function.</p>
+          <ul>
+            <li>Method → Object</li>
+            <li>Function → Global/Window</li>
+            <li>Arrow Function → Parent Scope</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="question-box">
+        <div class="question-header">
+          <span class="question-title">call, apply, and bind</span>
+          <span class="q-number">Q8</span>
+        </div>
+        <div class="answer-text">
+          <ul>
+            <li><strong>call():</strong> Invokes immediately (args comma-separated)</li>
+            <li><strong>apply():</strong> Invokes immediately (args as array)</li>
+            <li><strong>bind():</strong> Returns new function with bound context</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="question-box">
+        <div class="question-header">
+          <span class="question-title">Arrow vs Regular Functions</span>
+          <span class="q-number">Q9</span>
+        </div>
+        <div class="answer-text">
+          <p>Arrow functions don't have their own <code>this</code> or <code>arguments</code> object and cannot be constructors.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Async & ES6+ (Q10-Q15) -->
+    <section>
+      <h2>Unit 3: Async & ES6 Features (Q10 - Q15)</h2>
+
+      <div class="question-box">
+        <div class="question-header">
+          <span class="question-title">Promises</span>
+          <span class="q-number">Q10</span>
+        </div>
+        <div class="answer-text">
+          <p>Object representing completion/failure of async operation. States: Pending, Fulfilled, Rejected.</p>
+        </div>
+      </div>
+
+      <div class="question-box">
+        <div class="question-header">
+          <span class="question-title">Async/Await</span>
+          <span class="q-number">Q11</span>
+        </div>
+        <div class="answer-text">
+          <p>Syntactic sugar for Promises. <code>await</code> pauses execution until Promise resolves.</p>
+        </div>
+      </div>
+
+      <div class="question-box">
+        <div class="question-header">
+          <span class="question-title">Destructuring</span>
+          <span class="q-number">Q12</span>
+        </div>
+        <div class="answer-text">
+          <p>Extract values from arrays/objects into variables.</p>
+<pre><code>const { name, age } = person;
+const [first, second] = array;</code></pre>
+        </div>
+      </div>
+
+      <div class="question-box">
+        <div class="question-header">
+          <span class="question-title">Spread & Rest Operators</span>
+          <span class="q-number">Q13</span>
+        </div>
+        <div class="answer-text">
+          <p><strong>Spread (...):</strong> Expands array/object.</p>
+          <p><strong>Rest (...):</strong> Collects arguments into array.</p>
+        </div>
+      </div>
+
+      <div class="question-box">
+        <div class="question-header">
+          <span class="question-title">Template Literals</span>
+          <span class="q-number">Q14</span>
+        </div>
+        <div class="answer-text">
+          <p>Backticks (`) allow string interpolation <code>${var}</code> and multi-line strings.</p>
+        </div>
+      </div>
+
+      <div class="question-box">
+        <div class="question-header">
+          <span class="question-title">Map vs forEach</span>
+          <span class="q-number">Q15</span>
+        </div>
+        <div class="answer-text">
+          <ul>
+            <li><strong>map:</strong> Returns a new array. Use for transformation.</li>
+            <li><strong>forEach:</strong> Returns undefined. Use for side effects.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Functional Programming (Q16-Q21) -->
+    <section>
+      <h2>Unit 4: Functional Programming (Q16 - Q21)</h2>
+
+      <div class="question-box">
+        <div class="question-header">
+          <span class="question-title">Pure vs Impure Functions</span>
+          <span class="q-number">Q16, Q17</span>
+        </div>
+        <div class="answer-text">
+          <p><strong>Impure:</strong> Side effects (logs, global vars).</p>
+          <p><strong>Pure:</strong> No side effects. Output depends only on input.</p>
+        </div>
+      </div>
+
+      <div class="question-box">
+        <div class="question-header">
+          <span class="question-title">Closures</span>
+          <span class="q-number">Q18, Q19</span>
+        </div>
+        <div class="answer-text">
+          <p>Function remembering its parent scope variables.</p>
+<pre><code>function outer() {
+    let count = 0;
+    return () => ++count;
+}</code></pre>
+        </div>
+      </div>
+
+      <div class="question-box">
+        <div class="question-header">
+          <span class="question-title">IIFE</span>
+          <span class="q-number">Q20, Q21</span>
+        </div>
+        <div class="answer-text">
+          <p>Immediately Invoked Function Expression. Used for Data Privacy.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: Practical & Advanced (Q22+) -->
+    <section>
+      <h2>Unit 5: Practical & Advanced (Q22+)</h2>
+
+      <div class="question-box">
+        <div class="question-header">
+          <span class="question-title">Find vs Filter</span>
+          <span class="q-number">Q22</span>
+        </div>
+        <div class="answer-text">
+          <p><strong>Find:</strong> Returns first match.</p>
+          <p><strong>Filter:</strong> Returns array of all matches.</p>
+        </div>
+      </div>
+
+      <div class="question-box">
+        <div class="question-header">
+          <span class="question-title">Some vs Every</span>
+          <span class="q-number">Q23</span>
+        </div>
+        <div class="answer-text">
+          <p><strong>Some:</strong> True if ANY match.</p>
+          <p><strong>Every:</strong> True if ALL match.</p>
+        </div>
+      </div>
+
+      <div class="question-box">
+        <div class="question-header">
+          <span class="question-title">Coding: Private Counter</span>
+          <span class="q-number">Q24</span>
+        </div>
+        <div class="answer-text">
+<pre><code>function counter (){
+    let count = 0;
+    return function(){ return ++count; }
+}</code></pre>
+        </div>
+      </div>
+
+      <div class="question-box">
+        <div class="question-header">
+          <span class="question-title">Coding: Discount HOF</span>
+          <span class="q-number">Q25</span>
+        </div>
+        <div class="answer-text">
+<pre><code>function discount(d) {
+    return (price) => price - (price * d/100);
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
+  </body>
+</html>

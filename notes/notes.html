@@ -1,0 +1,937 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Notes for Beginners</title>
+    <style>
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.6;
+        color: #d4d4d4;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #1e1e1e;
+      }
+      h1,
+      h2,
+      h3 {
+        color: #569cd6;
+      }
+      h1 {
+        border-bottom: 2px solid #569cd6;
+        padding-bottom: 10px;
+      }
+      h2 {
+        border-bottom: 1px solid #333;
+        padding-bottom: 5px;
+        margin-top: 40px;
+        color: #4ec9b0;
+      }
+      .concept-box {
+        background-color: #252526;
+        border-left: 5px solid #569cd6;
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 4px;
+        color: #d4d4d4;
+      }
+      .concept-title {
+        font-weight: bold;
+        color: #9cdcfe;
+        margin-bottom: 5px;
+        display: block;
+      }
+      code {
+        font-family: "Consolas", "Courier New", monospace;
+        background-color: #3c3c3c;
+        padding: 2px 5px;
+        border-radius: 3px;
+        color: #ce9178;
+      }
+      pre {
+        background-color: #1e1e1e;
+        border: 1px solid #333;
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 5px;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        font-family: "Consolas", "Monaco", monospace;
+      }
+      pre code {
+        background-color: transparent;
+        padding: 0;
+        color: inherit;
+        border-radius: 0;
+      }
+      .file-path {
+        color: #858585;
+        font-size: 0.9em;
+        margin-bottom: 10px;
+        font-style: italic;
+      }
+      /* Syntax highlighting simulation */
+      .token-comment {
+        color: #6a9955;
+        font-style: italic;
+      }
+      .token-keyword {
+        color: #c586c0;
+      }
+      .token-string {
+        color: #ce9178;
+      }
+      .token-number {
+        color: #b5cea8;
+      }
+      .token-function {
+        color: #dcdcaa;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JavaScript Notes for Beginners</h1>
+    <p>
+      Welcome to your JavaScript learning journey! This document breaks down
+      every file in your project, explaining the code line-by-line in simple
+      terms.
+    </p>
+
+    <!-- SECTION: Day 1 -->
+    <section>
+      <h2>Day 1</h2>
+
+      <div class="concept-box">
+        <span class="concept-title">Concept: Variables & Output</span>
+        <p>
+          Imagine a variable as a labeled box where you can store things
+          (numbers, text). <code>console.log()</code> is how you ask the
+          computer to "say" or "show" something on the screen.
+        </p>
+      </div>
+
+      <h3><code>day-1/main.js</code></h3>
+      <p>This file covers basic output and variable declarations.</p>
+      <pre><code class="javascript"><span class="token-comment">// print "Hello World" to the console/terminal</span>
+console.log(<span class="token-string">"Hello World"</span>);
+<span class="token-comment">// print "First Line of Code" to the console/terminal</span>
+console.log(<span class="token-string">"First Line of Code"</span>);
+
+<span class="token-comment">// alert("Welcome to JavaScript!"); // This line is commented out, so it won't run. It would show a popup alert.</span>
+
+
+<span class="token-comment">// Declare a variable named 'name' using 'let' (can be changed later) and assign string 'Alice'</span>
+<span class="token-keyword">let</span> name = <span class="token-string">'Alice'</span>;
+<span class="token-comment">// Declare a constant named 'age' using 'const' (cannot be changed) and assign number 22</span>
+<span class="token-keyword">const</span> age = <span class="token-number">22</span>;
+<span class="token-comment">// Declare a variable named 'city' using 'var' (older way, function scoped) and assign string 'New York'</span>
+<span class="token-keyword">var</span> city = <span class="token-string">'New York'</span>
+
+<span class="token-comment">// Print the values of name, age, and city to the console separated by spaces</span>
+console.log(name, age, city);
+
+<span class="token-comment">// key comparison: check if age is less than or equal to 23. Result is a boolean (true/false)</span>
+<span class="token-keyword">let</span> isAdult = age <= <span class="token-number">23</span>;
+<span class="token-comment">// Print the boolean result (true)</span>
+console.log(isAdult);
+
+<span class="token-comment">// Create a string using template literals (backticks `) to embed the variable 'name' inside the string</span>
+<span class="token-keyword">let</span> gretting = `<span class="token-string">Hi, ${name}</span>`
+<span class="token-comment">// Print the greeting string</span>
+console.log(gretting);
+
+
+<span class="token-comment">// Perform addition: 10 + 5</span>
+<span class="token-keyword">let</span> sum = <span class="token-number">10</span> + <span class="token-number">5</span>;
+<span class="token-comment">// Print the result (15)</span>
+console.log(sum);
+
+<span class="token-comment">// Perform subtraction: 25 - 5</span>
+<span class="token-keyword">let</span> sub = <span class="token-number">25</span> - <span class="token-number">5</span>;
+
+<span class="token-comment">// Print the result (20)</span>
+console.log(sub);</code></pre>
+
+      <h3><code>day-1/arithmetic.js</code></h3>
+      <p>This file demonstrates arithmetic operations in JavaScript.</p>
+      <pre><code class="javascript"><span class="token-comment">// JavaScript Arithmetic Examples - A comment describing the file</span>
+
+<span class="token-comment">// Addition</span>
+<span class="token-comment">// Declare variable 'a' with value 50</span>
+<span class="token-keyword">let</span> a = <span class="token-number">50</span>;
+<span class="token-comment">// Declare variable 'b' with value 20</span>
+<span class="token-keyword">let</span> b = <span class="token-number">20</span>;
+
+<span class="token-comment">// Add 'a' and 'b' and store resulting value in 'sum'</span>
+<span class="token-keyword">let</span> sum = a + b;
+<span class="token-comment">// Print the equation and result using template literals for formatting</span>
+console.log(`${a} + ${b} = ${sum}`);
+
+
+<span class="token-comment">//substraction</span>
+<span class="token-comment">// Subtract 'b' from 'a' and store in 'difference'</span>
+<span class="token-keyword">let</span> difference = a - b;
+<span class="token-comment">// Print the equation and result</span>
+console.log(`${a} - ${b} = ${difference}`);
+
+
+<span class="token-comment">//Multiplication</span>
+<span class="token-comment">// Multiply 'a' by 'b' and store in 'product'</span>
+<span class="token-keyword">let</span> product = a * b;
+<span class="token-comment">// Print just the product result</span>
+console.log(product);
+
+
+<span class="token-comment">//Division (With Zero Check)</span>
+<span class="token-comment">// Check if 'b' is NOT equal to 0 before dividing to avoid errors or Infinity</span>
+<span class="token-keyword">if</span> (b !== <span class="token-number">0</span>) {
+    <span class="token-comment">// Divide 'a' by 'b' and store in 'div'</span>
+    <span class="token-keyword">let</span> div = a / b;
+    <span class="token-comment">// Print the division result</span>
+    console.log(`${a} / ${b} = ${div}`);
+}<span class="token-keyword">else</span>{
+    <span class="token-comment">// If 'b' was 0, print an error message instead of dividing</span>
+    console.log(<span class="token-string">"Division By Zero Is Not Allowed"</span>);
+    
+}
+
+
+<span class="token-comment">//Module (Reminder)</span>
+
+<span class="token-comment">// Check if 'b' is not 0</span>
+<span class="token-keyword">if</span>( b!==<span class="token-number">0</span>){
+    <span class="token-comment">// Calculate the remainder of 'a' divided by 'b' using % (modulus operator)</span>
+    <span class="token-keyword">let</span> reminder = a % b;
+    <span class="token-comment">// Print the remainder</span>
+    console.log(`${a} % ${b} = ${reminder}`);
+}<span class="token-keyword">else</span>{
+    <span class="token-comment">// Handle division by zero case for modulus</span>
+    console.log(<span class="token-string">"Module By Zero Is Not Allowed."</span>);
+    
+}
+
+
+<span class="token-comment">//Exponentiation</span>
+<span class="token-comment">// Calculate 'a' to the power of 'b' (50^20) using ** operator.</span>
+<span class="token-keyword">let</span> power = a ** b <span class="token-comment">//same as Math.pow(a,b)</span>
+<span class="token-comment">// Print the result</span>
+console.log(`${a} ** ${b} = ${power}`);
+
+
+<span class="token-comment">//Increment & Decrement</span>
+<span class="token-comment">// Set 'x' to 5</span>
+<span class="token-keyword">let</span> x = <span class="token-number">5</span>;
+<span class="token-comment">// Print initial value</span>
+console.log(`Initial x: ${x}`);
+<span class="token-comment">// Post-increment: x++ returns the CURRENT value (5), then increases x to 6.</span>
+console.log(`Post-increment: ${x++}`); <span class="token-comment">//return old value, then increments</span>
+<span class="token-comment">// x is now 6</span>
+console.log(`After Post-increment: ${x}`);
+<span class="token-comment">// Pre-increment: ++x increases x to 7 FIRST, then returns the new value (7).</span>
+console.log(`Pre-increment: ${++x}`); <span class="token-comment">//Increment first, then returns</span>
+<span class="token-comment">// Post-decrement: x-- returns CURRENT value (7), then decreases x to 6.</span>
+console.log(`Post-decrement: ${x--}`);
+<span class="token-comment">// x is now 6</span>
+console.log(`After Post-decrement: ${x}`);
+<span class="token-comment">// Pre-decrement: --x decreases x to 5 FIRST, then returns new value (5).</span>
+console.log(`Pre-decrement: ${--x}`);</code></pre>
+    </section>
+
+    <!-- SECTION: Day 2 -->
+    <section>
+      <h2>Day 2</h2>
+
+      <div class="concept-box">
+        <span class="concept-title"
+          >Concept: Control Flow (Making Decisions)</span
+        >
+        <p>
+          Just like a traffic light controls cars,
+          <code>if-else</code> statements control your code. They check a
+          condition (True or False). If True, do one thing; if False, do
+          another.
+        </p>
+      </div>
+
+      <h3><code>day-2/script.js</code></h3>
+      <p>
+        Introduces <code>if-else</code> control flow and a Rock-Paper-Scissors
+        game logic.
+      </p>
+      <pre><code class="javascript"><span class="token-comment">//if else else-if statement</span>
+
+<span class="token-comment">// Define a function that takes a numeric score and returns a grade</span>
+<span class="token-keyword">function</span> getGrade(score) {
+  <span class="token-comment">// Check if score is between 90 and 100</span>
+  <span class="token-keyword">if</span> (score >= <span class="token-number">90</span> && score <= <span class="token-number">100</span>) {
+    <span class="token-comment">// Return "A+" if condition is true</span>
+    <span class="token-keyword">return</span> <span class="token-string">"A+"</span>;
+  } <span class="token-keyword">else</span> <span class="token-keyword">if</span> (score >= <span class="token-number">80</span> && score <= <span class="token-number">89</span>) {
+    <span class="token-comment">// If not A+, check if between 80 and 89</span>
+    <span class="token-keyword">return</span> <span class="token-string">"A"</span>;
+  } <span class="token-keyword">else</span> <span class="token-keyword">if</span> (score >= <span class="token-number">70</span> && score <= <span class="token-number">79</span>) {
+    <span class="token-comment">// Check for B range</span>
+    <span class="token-keyword">return</span> <span class="token-string">"B"</span>;
+  } <span class="token-keyword">else</span> <span class="token-keyword">if</span> (score >= <span class="token-number">60</span> && score <= <span class="token-number">69</span>) {
+    <span class="token-comment">// Check for C range</span>
+    <span class="token-keyword">return</span> <span class="token-string">"C"</span>;
+  } <span class="token-keyword">else</span> <span class="token-keyword">if</span> (score >= <span class="token-number">33</span> && score <= <span class="token-number">59</span>) {
+    <span class="token-comment">// Check for D range</span>
+    <span class="token-keyword">return</span> <span class="token-string">"D"</span>;
+  } <span class="token-keyword">else</span> <span class="token-keyword">if</span> (score >= <span class="token-number">0</span> && score <= <span class="token-number">32</span>) {
+    <span class="token-comment">// Check for Fail range</span>
+    <span class="token-keyword">return</span> <span class="token-string">"Fail"</span>;
+  } <span class="token-keyword">else</span> <span class="token-keyword">return</span> <span class="token-string">"Invalid Marks"</span>; <span class="token-comment">// If none of the above (e.g., negative or >100), return this error</span>
+}
+
+<span class="token-comment">// Call the function with 90 and print the result</span>
+console.log(getGrade(<span class="token-number">90</span>));
+
+
+
+<span class="token-comment">// Rock paper scissors logic</span>
+
+<span class="token-comment">// Function taking two inputs: user's choice and computer's choice</span>
+<span class="token-keyword">function</span> rps(user, computer){
+
+    <span class="token-comment">// If both chose the same thing, it's a draw</span>
+    <span class="token-keyword">if</span>(user === computer) <span class="token-keyword">return</span> <span class="token-string">'draw'</span>;
+
+    <span class="token-comment">// Conditions where User wins</span>
+    <span class="token-comment">// Rock beats Scissor</span>
+    <span class="token-keyword">if</span>(user === <span class="token-string">'rock'</span> && computer === <span class="token-string">'scissor'</span>) <span class="token-keyword">return</span> <span class="token-string">'user'</span>;
+    <span class="token-comment">// Paper beats Rock</span>
+    <span class="token-keyword">if</span>(user === <span class="token-string">'paper'</span> && computer === <span class="token-string">'rock'</span>) <span class="token-keyword">return</span> <span class="token-string">'user'</span>;   
+    <span class="token-comment">// Scissor beats Paper</span>
+    <span class="token-keyword">if</span>(user === <span class="token-string">'scissor'</span> && computer === <span class="token-string">'paper'</span>) <span class="token-keyword">return</span> <span class="token-string">'user'</span>;
+
+    <span class="token-comment">// If it's not a draw and user didn't win, Computer must have won</span>
+    <span class="token-keyword">return</span> <span class="token-string">'computer'</span>;
+}
+
+<span class="token-comment">// Test the function with "paper" vs "paper" (should be 'draw')</span>
+console.log(rps(<span class="token-string">"paper"</span>, <span class="token-string">"paper"</span>));</code></pre>
+    </section>
+
+    <!-- SECTION: Day 3 -->
+    <section>
+      <h2>Day 3</h2>
+
+      <div class="concept-box">
+        <span class="concept-title">Concept: Loops (Repetition)</span>
+        <p>
+          Loops allow you to repeat an action multiple times without writing the
+          same code over and over. A <code>for</code> loop is good when you know
+          how many times to repeat. A <code>while</code> loop is good when you
+          want to repeat UNTIL something happens.
+        </p>
+      </div>
+
+      <h3><code>day-3/index.js</code></h3>
+      <p>Basic structures and usage of loops.</p>
+      <pre><code class="javascript"><span class="token-comment">// loops</span>
+<span class="token-comment">// for loop</span>
+<span class="token-comment">// while loop</span>
+<span class="token-comment">// do while loop</span>
+
+<span class="token-comment">/*
+
+pattern of for loop
+start; end; change refers to initialization; condition; increment/decrement
+for(start; end; change)
+
+
+pattern of while loop
+
+start
+while(end){
+    code
+    change
+}
+...
+*/</span>
+
+
+
+<span class="token-comment">// for loop</span>
+
+<span class="token-comment">// Initialize i=1; Run while i < 10; Increment i by 1 each time</span>
+<span class="token-keyword">for</span>(<span class="token-keyword">let</span> i = <span class="token-number">1</span>; i < <span class="token-number">10</span>; i++){
+    <span class="token-comment">// Empty console log (will just print newlines)</span>
+    console.log();
+}
+
+
+
+
+
+<span class="token-comment">// While loop</span>
+
+<span class="token-comment">// Initialize i=1</span>
+<span class="token-keyword">let</span> i = <span class="token-number">1</span>;
+<span class="token-comment">// Run loop as long as i is less than 32</span>
+<span class="token-keyword">while</span>(i<<span class="token-number">32</span>){
+    <span class="token-comment">//code</span>
+    console.log(); <span class="token-comment">// print something</span>
+    i++ <span class="token-comment">// Increment i manually</span>
+}
+
+
+
+
+<span class="token-comment">// do while</span>
+
+<span class="token-comment">// Initialize j=1</span>
+<span class="token-keyword">let</span> j = <span class="token-number">1</span>;
+<span class="token-comment">// 'do' block executes AT LEAST ONCE before checking condition</span>
+<span class="token-keyword">do</span>{
+    console.log(j); <span class="token-comment">// print j</span>
+    j++ <span class="token-comment">// increment j</span>
+}
+<span class="token-keyword">while</span>(j<<span class="token-number">20</span>) <span class="token-comment">// Check condition after execution</span>
+
+
+
+<span class="token-comment">//breaks in loops</span>
+<span class="token-comment">// Loop from 1 to 200</span>
+<span class="token-keyword">for</span> (<span class="token-keyword">let</span> i = <span class="token-number">1</span>; i < <span class="token-number">201</span>; i++) {
+  console.log(i);
+  <span class="token-comment">// If i reaches 32, exit the loop immediately using 'break'</span>
+  <span class="token-keyword">if</span> (i === <span class="token-number">32</span>) <span class="token-keyword">break</span>;
+}
+
+<span class="token-comment">//continue in loops</span>
+<span class="token-comment">// Loop from 1 to 200</span>
+<span class="token-keyword">for</span>(<span class="token-keyword">let</span> i = <span class="token-number">1</span>; i < <span class="token-number">201</span>; i++){
+    <span class="token-comment">// If i is 32</span>
+    <span class="token-keyword">if</span>(i === <span class="token-number">32</span>){
+    <span class="token-comment">// Skip the rest of this iteration and jump to the next one (i becomes 33)</span>
+    <span class="token-keyword">continue</span>;
+    }
+    <span class="token-comment">// Print i (will print 1-31, skip 32, then 33-200)</span>
+    console.log(i);
+}</code></pre>
+
+      <h3><code>day-3/script.js</code> (Selected Exercises)</h3>
+      <p>Various loop exercises and solutions.</p>
+      <pre><code class="javascript"><span class="token-comment">// 1. Print 1 to 10 using for loop.</span>
+
+<span class="token-comment">// Loop from i=1 to i=10</span>
+<span class="token-keyword">for</span>(<span class="token-keyword">let</span> i = <span class="token-number">1</span>; i <= <span class="token-number">10</span>; i++){
+    <span class="token-comment">// Print current number</span>
+    console.log(i);
+}
+
+<span class="token-comment">// 2. Print numbers from 10 to 1 using while loop.</span>
+
+<span class="token-comment">// Using for loop (countdown)</span>
+<span class="token-keyword">for</span>(<span class="token-keyword">let</span> i = <span class="token-number">10</span>; i > <span class="token-number">0</span>; i--){
+    console.log(i);
+
+}
+
+<span class="token-comment">// Using while loop (same logic)</span>
+<span class="token-keyword">let</span> i = <span class="token-number">10</span>;
+<span class="token-keyword">while</span>(i > <span class="token-number">0</span>){
+    console.log(i);
+    i--;
+}
+
+<span class="token-comment">// 3. Print even numbers from 1 to 20 using a for loop.</span>
+
+<span class="token-keyword">for</span>(<span class="token-keyword">let</span> i = <span class="token-number">1</span>; i <= <span class="token-number">20</span>; i++){
+    <span class="token-comment">// Check if number is divisible by 2 (even)</span>
+    <span class="token-keyword">if</span>( i%2 === <span class="token-number">0</span> )
+        console.log(i);
+}
+
+<span class="token-comment">// 4. Print odd number from 1 to 15 using a while loop.</span>
+
+<span class="token-comment">// Re-using 'i' (ensure it is declared in correct scope or use fresh variable)</span>
+<span class="token-keyword">let</span> k = <span class="token-number">1</span>; <span class="token-comment">// Renaming for clarity here, though source uses 'i'</span>
+<span class="token-keyword">while</span>( k <= <span class="token-number">15</span>){
+    <span class="token-comment">// Check if remainder is 1 (odd)</span>
+    <span class="token-keyword">if</span>( k%2 === <span class="token-number">1</span>){
+        console.log(k);
+    }
+    k++;
+}
+
+<span class="token-comment">// 5. Print the multiplication table of 5</span>
+
+<span class="token-keyword">for</span>(<span class="token-keyword">let</span> i = <span class="token-number">1</span>; i <= <span class="token-number">10</span>; i++){
+    <span class="token-comment">// Template literal works well here: 5 * 1 = 5</span>
+    console.log(`5 * ${i} = ${i * 5}`);
+
+}
+
+<span class="token-comment">// 6. Find the sum of numbers from 1 to 100 using a loop.</span>
+
+<span class="token-comment">// Initialize accumulator 'sum' to 0</span>
+<span class="token-keyword">let</span> sum = <span class="token-number">0</span>;
+<span class="token-keyword">for</span>(<span class="token-keyword">let</span> i = <span class="token-number">1</span>; i <= <span class="token-number">100</span>; i++){
+    <span class="token-comment">// Add current number 'i' to 'sum'</span>
+    sum = sum + i;
+}
+<span class="token-comment">// Print final total</span>
+console.log(sum);
+
+
+<span class="token-comment">// 7. Print all number between 1 to 50 that are divisible by 3.</span>
+
+<span class="token-keyword">for</span>(<span class="token-keyword">let</span> i = <span class="token-number">1</span>; i <= <span class="token-number">50</span>; i++){
+    <span class="token-comment">// Check divisibility by 3</span>
+    <span class="token-keyword">if</span>(i%3 === <span class="token-number">0</span>){
+        console.log(i);
+    }
+}
+
+<span class="token-comment">// Q1. Stop at first Multiple of 7.</span>
+
+<span class="token-keyword">for</span>(<span class="token-keyword">let</span> i = <span class="token-number">1</span>; i <= <span class="token-number">100</span>; i++){
+    <span class="token-comment">// If divisible by 7</span>
+    <span class="token-keyword">if</span>(i%7 === <span class="token-number">0</span>){
+        <span class="token-comment">// Stop the loop</span>
+        <span class="token-keyword">break</span>;
+    }
+    console.log(i);
+}
+
+<span class="token-comment">// Q2. Skip Multiples of 3</span>
+
+<span class="token-keyword">for</span>(<span class="token-keyword">let</span> i = <span class="token-number">1</span>; i <= <span class="token-number">20</span>; i++){
+    <span class="token-comment">// If divisible by 3</span>
+    <span class="token-keyword">if</span>(i%3 === <span class="token-number">0</span>){
+        <span class="token-comment">// Skip this iteration</span>
+        <span class="token-keyword">continue</span>;
+    }
+    console.log(i);  
+}</code></pre>
+    </section>
+
+    <!-- SECTION: Day 4 -->
+    <section>
+      <h2>Day 4</h2>
+
+      <div class="concept-box">
+        <span class="concept-title">Concept: Functions (Reusable Recipes)</span>
+        <p>
+          Functions are small factories or recipes. You put ingredients in
+          (parameters), the function does some work, and often gives you a
+          finished product back (return value).
+        </p>
+      </div>
+
+      <h3><code>day-4/function.js</code></h3>
+      <p>Basic to intermediate function concepts.</p>
+      <pre><code class="javascript"><span class="token-comment">// Why What and How...</span>
+<span class="token-comment">// Why - To reuse code</span>
+<span class="token-comment">// What - Function</span>
+<span class="token-comment">// How - Function declaration, Function expression, Arrow function.</span>
+
+<span class="token-comment">// 1. Function declaration</span>
+<span class="token-comment">// 'function' keyword + name + () + {}</span>
+<span class="token-keyword">function</span> abc() {
+  <span class="token-comment">// Function declaration & Statement</span>
+}
+<span class="token-comment">// function call</span>
+abc();
+
+<span class="token-comment">// 2. Function Expression</span>
+<span class="token-comment">// Assigning an anonymous function to a variable 'xyz'</span>
+<span class="token-keyword">let</span> xyz = <span class="token-keyword">function</span> () {
+  <span class="token-comment">// Function expression</span>
+};
+
+<span class="token-comment">// 3. Arrow Function</span>
+<span class="token-comment">// Modern syntax: () => {}</span>
+<span class="token-keyword">let</span> pqr = () => {
+  <span class="token-comment">//arrow function logic</span>
+};
+
+<span class="token-comment">/* -------Parameter and Arguments-------- */</span>
+
+<span class="token-comment">// Parameters are variables listed in function definition</span>
+<span class="token-keyword">function</span> abc(<span class="token-comment">/* Parameter */</span>) {
+  <span class="token-comment">// ...</span>
+}
+<span class="token-comment">// Arguments are actual values passed during call</span>
+abc(<span class="token-comment">/* Arguements */</span>);
+
+
+<span class="token-comment">/* Default, Rest and Spread Parameter */</span>
+
+<span class="token-comment">// Default Parameter: If v1 or v2 are not provided, they default to 0</span>
+<span class="token-keyword">function</span> add(v1 = <span class="token-number">0</span>, v2 = <span class="token-number">0</span> <span class="token-comment">/* Default Parameter */</span>) {
+  console.log(v1 + v2);
+}
+<span class="token-comment">// Call without arguments -> 0 + 0 = 0</span>
+add();
+
+<span class="token-comment">// Rest Parameter (...) to handle infinite arguments as an array</span>
+<span class="token-keyword">function</span> abcd(...value) {
+  <span class="token-comment">// 'value' is an array of all passed arguments</span>
+  console.log(value);
+}
+<span class="token-comment">// Pass 10 numbers; they become an array [1, 2, ... 10]</span>
+abcd(<span class="token-number">1</span>, <span class="token-number">2</span>, <span class="token-number">3</span>, <span class="token-number">4</span>, <span class="token-number">5</span>, <span class="token-number">6</span>, <span class="token-number">7</span>, <span class="token-number">8</span>, <span class="token-number">9</span>, <span class="token-number">10</span>);
+
+<span class="token-comment">/
+// Mixed parameters: first three go to a, b, c. The REST go into 'value' array.</span>
+<span class="token-keyword">function</span> mixed(a, b, c, ...value) {
+  console.log(a, b, c, value);
+}
+mixed(<span class="token-number">1</span>, <span class="token-number">2</span>, <span class="token-number">3</span>, <span class="token-number">4</span>, <span class="token-number">5</span>, <span class="token-number">6</span>, <span class="token-number">7</span>, <span class="token-number">8</span>, <span class="token-number">9</span>, <span class="token-number">10</span>);
+<span class="token-comment">// a=1, b=2, c=3, value=[4,5,6,7,8,9,10]</span>
+
+
+<span class="token-comment">/* Return values and Early Returns */</span>
+
+<span class="token-comment">// Example 1. Basic return</span>
+<span class="token-keyword">function</span> ret() {
+  <span class="token-comment">// Function stops here and sends 72 back to the caller</span>
+  <span class="token-keyword">return</span> <span class="token-number">72</span>;
+}</code></pre>
+    </section>
+
+    <!-- SECTION: Day 5 -->
+    <section>
+      <h2>Day 5</h2>
+
+      <div class="concept-box">
+        <span class="concept-title">Concept: Scope & Context</span>
+        <p>
+          Scope is simply "visibility"—where can you see a variable?
+          <code>Global</code> means everyone can see it.
+          <code>Local</code> (inside a function) means only that function can
+          see it. <code>Hoisting</code> is JavaScript's behavior of moving
+          declarations to the top before running.
+        </p>
+      </div>
+
+      <h3><code>day-5/script.js</code></h3>
+      <p>Advanced function concepts: Pure functions, Closures, IIFE.</p>
+      <pre><code class="javascript"><span class="token-comment">// Pure Function vs Impure Function</span>
+
+<span class="token-comment">// Pure Function: No side effects, always returns same output for same input.</span>
+
+<span class="token-keyword">let</span> a = <span class="token-number">12</span>; <span class="token-comment">// Global variable</span>
+
+<span class="token-keyword">function</span> pure() {
+  console.log(<span class="token-string">"Pure Function"</span>);
+  <span class="token-comment">// Doesn't modify 'a'</span>
+}
+pure();
+
+<span class="token-comment">// Impure Function: Modifies external state ('a')</span>
+
+<span class="token-keyword">function</span> impure() {
+  <span class="token-comment">// Side effect: changing global variable a</span>
+  a++;
+  console.log(a);
+}
+impure();
+
+<span class="token-comment">// Closures:</span>
+<span class="token-comment">// A closure gives you access to an outer function's scope from an inner function.</span>
+
+<span class="token-keyword">function</span> clousers() {
+  <span class="token-keyword">let</span> c = <span class="token-number">10</span>; <span class="token-comment">// Variable in outer scope</span>
+  <span class="token-comment">// Return an inner function</span>
+  <span class="token-keyword">return</span> <span class="token-keyword">function</span> () {
+    <span class="token-comment">// This inner function "remembers" c even after clousers() has finished executing</span>
+    console.log(c);
+  };
+}
+clousers(); <span class="token-comment">// This would return the function. To run it: clousers()()</span>
+
+<span class="token-comment">// Lexical Scope:</span>
+<span class="token-comment">// Inner functions can access variables of outer functions.</span>
+
+<span class="token-keyword">function</span> lexical() {
+  <span class="token-keyword">let</span> x = <span class="token-number">15</span>;
+  <span class="token-keyword">function</span> defg() {
+    <span class="token-keyword">let</span> y = <span class="token-number">12</span>;
+    <span class="token-comment">// can access x here</span>
+    <span class="token-keyword">function</span> ghij() {
+      <span class="token-keyword">let</span> z = <span class="token-number">11</span>;
+      <span class="token-comment">// can access x and y here</span>
+    }
+  }
+}
+
+<span class="token-comment">// IIFE (Immediately Invoked Function Expressions)</span>
+<span class="token-comment">// A function that runs as soon as it is defined.</span>
+
+(<span class="token-keyword">function</span> () {
+  console.log(<span class="token-string">"IIFE (Immediately Invoked Function Expressions)"</span>);
+})(); <span class="token-comment">// The () at the end invokes it immediately.</span>
+
+
+<span class="token-comment">// Hoisting difference between declaration and expressions</span>
+
+<span class="token-comment">// Function declarations ARE hoisted. You can call them before defining them.</span>
+Hoistig();
+
+<span class="token-keyword">function</span> Hoistig() {
+  console.log(<span class="token-string">'Hoistig difference between declaration expressions'</span>);
+}
+
+
+<span class="token-comment">// Function Expressions are NOT hoisted.</span>
+<span class="token-comment">// If you uncomment the line below, it throws an error (Expression is not a function/undefined)</span>
+<span class="token-comment">/*  Expression();       */</span>
+
+<span class="token-keyword">let</span> Expression = <span class="token-keyword">function</span> () {
+  console.log(<span class="token-string">'Hoistig difference between declaration expressions'</span>);
+}</code></pre>
+    </section>
+
+    <!-- SECTION: Day 6 -->
+    <section>
+      <h2>Day 6</h2>
+
+      <div class="concept-box">
+        <span class="concept-title">Concept: Arrays (Lists of Data)</span>
+        <p>
+          An Array is a single variable that can hold a list of items (like a
+          shopping list). You can access items by their position (index),
+          starting at 0. Methods like <code>map</code> and
+          <code>filter</code> help you transform or search through these lists
+          easily.
+        </p>
+      </div>
+
+      <h3><code>day-6/Arrays/script.js</code></h3>
+      <p>Introduction to Arrays: Creation, Modification, and Basic Methods.</p>
+      <pre><code class="javascript"><span class="token-comment">// Create, Access, Modify Array</span>
+<span class="token-comment">//create</span>
+<span class="token-comment">// Declare an array named 'marks' with 6 numbers</span>
+<span class="token-keyword">let</span> marks = [<span class="token-number">90</span>, <span class="token-number">88</span>, <span class="token-number">70</span>, <span class="token-number">80</span>, <span class="token-number">92</span>, <span class="token-number">86</span>];
+
+<span class="token-comment">//access</span>
+<span class="token-comment">// Access the 3rd element (index 2) of the array. (90 is index 0, 88 is 1, 70 is 2)</span>
+marks[<span class="token-number">2</span>]; <span class="token-comment">// returns 70</span>
+
+<span class="token-comment">//modify</span>
+<span class="token-comment">// Change the value at index 5 (the last one, 86) to 96</span>
+marks[<span class="token-number">5</span>] = <span class="token-number">96</span>;
+
+<span class="token-comment">// Array methods: push, pop, shift, unshift, splice, slice, reverse, sort</span>
+
+<span class="token-keyword">let</span> arr = [<span class="token-number">1</span>, <span class="token-number">2</span>, <span class="token-number">3</span>, <span class="token-number">4</span>, <span class="token-number">5</span>, <span class="token-number">6</span>];
+arr.push(<span class="token-number">7000</span>); <span class="token-comment">// insert 7000 at the end. arr becomes [1, 2, 3, 4, 5, 6, 7000]</span>
+arr.pop(); <span class="token-comment">// remove the last element (7000). arr returns to [1, 2, 3, 4, 5, 6]</span>
+arr.shift(); <span class="token-comment">// remove the first element (1). arr becomes [2, 3, 4, 5, 6]</span>
+arr.unshift(<span class="token-number">22</span>); <span class="token-comment">// add 22 to the beginning. arr becomes [22, 2, 3, 4, 5, 6]</span>
+arr.splice(<span class="token-number">3</span>, <span class="token-number">2</span>); <span class="token-comment">// starting at index 3, remove 2 items. Removes corresponding values.</span>
+<span class="token-keyword">let</span> newarr = arr.slice(<span class="token-number">0</span>, <span class="token-number">4</span>); <span class="token-comment">// Create a new array from index 0 up to (but not including) 4.</span>
+arr.reverse(); <span class="token-comment">// Reverse the order of elements in 'arr' in-place.</span>
+
+<span class="token-comment">// Sorting</span>
+<span class="token-keyword">let</span> sortArray = [<span class="token-number">68</span>, <span class="token-number">85</span>, <span class="token-number">44</span>, <span class="token-number">58</span>, <span class="token-number">38</span>, <span class="token-number">96</span>];
+<span class="token-comment">// .sort() takes a comparison function. 'a - b' sorts numbers in Ascending order.</span>
+<span class="token-keyword">let</span> as = sortArray.sort(<span class="token-keyword">function</span> (a, b) {
+  <span class="token-keyword">return</span> a - b; <span class="token-comment">// result < 0 means a comes first, result > 0 means b comes first</span>
+});
+
+<span class="token-keyword">let</span> srtArray = [<span class="token-number">68</span>, <span class="token-number">85</span>, <span class="token-number">44</span>, <span class="token-number">58</span>, <span class="token-number">38</span>, <span class="token-number">96</span>];
+<span class="token-comment">// 'y - x' sorts numbers in Descending order (Big to Small).</span>
+<span class="token-keyword">let</span> ds = srtArray.sort(<span class="token-keyword">function</span> (x, y) {
+  <span class="token-keyword">return</span> y - x;
+}); 
+
+<span class="token-comment">// Arrow function version of sort</span>
+arr.sort((c, d) => c - d);</code></pre>
+
+      <h3><code>day-6/Advance/script.js</code></h3>
+      <p>
+        High-Order Array Methods: <code>forEach</code>, <code>map</code>,
+        <code>filter</code>, <code>reduce</code>, <code>find</code>,
+        <code>some</code>, <code>every</code>.
+      </p>
+      <pre><code class="javascript"><span class="token-comment">//forEach</span>
+<span class="token-keyword">let</span> arr = [<span class="token-number">11</span>, <span class="token-number">68</span>, <span class="token-number">38</span>, <span class="token-number">86</span>, <span class="token-number">26</span>];
+
+<span class="token-comment">// The function inside forEach runs for EVERY element in the array.</span>
+arr.forEach(<span class="token-keyword">function</span> (val) {
+  console.log(val + <span class="token-number">5</span>); <span class="token-comment">// Print current element + 5</span>
+}); 
+
+
+<span class="token-comment">//Map</span>
+<span class="token-comment">// map() creates a NEW array by transforming every element of the original array.</span>
+<span class="token-comment">// Note: It does NOT change the original array.</span>
+
+<span class="token-keyword">let</span> array = [<span class="token-number">11</span>, <span class="token-number">68</span>, <span class="token-number">38</span>, <span class="token-number">86</span>, <span class="token-number">26</span>];
+
+<span class="token-comment">// Return a new array where every element is replaced by 12 (silly example, usually you'd return val * 2 etc)</span>
+<span class="token-keyword">let</span> newarr = array.map(<span class="token-keyword">function</span>(val){
+    <span class="token-keyword">return</span> <span class="token-number">12</span>;
+})
+
+
+<span class="token-comment">// filter</span>
+<span class="token-comment">// filter() creates a NEW array containing only elements that pass the test (return true).</span>
+
+<span class="token-keyword">let</span> filarr = [<span class="token-number">12</span>, <span class="token-number">8</span>, <span class="token-number">48</span>, <span class="token-number">68</span>, <span class="token-number">76</span>]
+
+<span class="token-keyword">let</span> newfarr = filarr.filter(<span class="token-keyword">function</span> (val) {
+    <span class="token-comment">// Keep the element if it is greater than 10</span>
+    <span class="token-keyword">if</span>(val > <span class="token-number">10</span>) <span class="token-keyword">return</span> <span class="token-keyword">true</span>;
+})
+
+
+<span class="token-comment">// reduce</span>
+<span class="token-comment">// reduce() takes all elements and reduces them to a SINGLE value (like a sum).</span>
+
+<span class="token-keyword">let</span> rarr = [<span class="token-number">12</span>, <span class="token-number">8</span>, <span class="token-number">48</span>, <span class="token-number">68</span>, <span class="token-number">76</span>]
+
+<span class="token-comment">// accumulator starts at 0 (the second arg). val is the current item.</span>
+<span class="token-keyword">let</span> ans = rarr.reduce(<span class="token-keyword">function</span>(accumulator, val){
+    <span class="token-comment">// return new accumulator value (old sum + current value)</span>
+    <span class="token-keyword">return</span> accumulator + val;
+}, <span class="token-number">0</span>);
+
+
+<span class="token-comment">// find</span>
+<span class="token-comment">// find() returns the FIRST element that matches the condition.</span>
+
+<span class="token-keyword">let</span> findarr = [<span class="token-number">11</span>, <span class="token-number">68</span>, <span class="token-number">38</span>, <span class="token-number">11</span>, <span class="token-number">86</span>, <span class="token-number">26</span>];
+
+<span class="token-keyword">let</span> farr = findarr.find(<span class="token-keyword">function</span> (val){
+    <span class="token-comment">// Return the value if it equals 11. (returns the first 11 found)</span>
+    <span class="token-keyword">return</span> val === <span class="token-number">11</span>;
+});
+
+
+<span class="token-comment">// some</span>
+<span class="token-comment">// some() returns TRUE if at least ONE element matches the condition.</span>
+
+<span class="token-keyword">let</span> sarr = [<span class="token-number">12</span>, <span class="token-number">8</span>, <span class="token-number">48</span>, <span class="token-number">68</span>, <span class="token-number">76</span>, <span class="token-number">96</span>];
+
+<span class="token-keyword">let</span> any = sarr.some(<span class="token-keyword">function</span> (val) {
+    <span class="token-comment">// Is any value greater than 85? (Yes, 96 is). returns true.</span>
+    <span class="token-keyword">return</span> val > <span class="token-number">85</span>;
+})
+
+
+<span class="token-comment">// every </span>
+<span class="token-comment">// every() returns TRUE only if ALL elements match the condition.</span>
+
+<span class="token-keyword">let</span> earr = [<span class="token-number">11</span>, <span class="token-number">68</span>, <span class="token-number">38</span>, <span class="token-number">86</span>, <span class="token-number">26</span>];
+
+<span class="token-keyword">let</span> eve = earr.every(<span class="token-keyword">function</span>(val){
+    <span class="token-comment">// Are ALL values greater than 20? (No, 11 is not). returns false.</span>
+    <span class="token-keyword">return</span> val > <span class="token-number">20</span>;
+})</code></pre>
+    </section>
+
+    <!-- SECTION: Function Practice -->
+    <section>
+      <h2>Function Practice</h2>
+
+      <h3><code>function practice 2/index.js</code></h3>
+      <p>Practical applications of functions: Calculators, HOF, IIFE.</p>
+      <pre><code class="javascript"><span class="token-comment">// 1. BMI Calculator</span>
+
+<span class="token-comment">// Function to calculate Body Mass Index</span>
+<span class="token-keyword">function</span> bmi (weight, height){
+    <span class="token-comment">// Formula: weight in kg / (height in meters squared)</span>
+    <span class="token-keyword">return</span> weight / (height * height);
+}
+
+<span class="token-comment">// Calculate for 92kg, 1.7m. .toFixed(2) limits output to 2 decimal places.</span>
+console.log(bmi(<span class="token-number">92</span>, <span class="token-number">1.7</span>).toFixed(2));
+
+
+<span class="token-comment">// 2. Reusable Discount Calculator (Higher Order Function)</span>
+
+<span class="token-comment">// This function returns ANOTHER function.</span>
+<span class="token-comment">// It sets ("remembers") the discount rate.</span>
+<span class="token-keyword">function</span> discountCalculator(discount){
+    <span class="token-keyword">return</span> <span class="token-keyword">function</span> (price){
+        <span class="token-comment">// Calculates price after discount</span>
+        <span class="token-keyword">return</span> price - price * (discount /<span class="token-number">100</span>);
+    }
+}
+
+<span class="token-comment">// Create a generic function 'ten' that calculates 10% discount</span>
+<span class="token-keyword">let</span> ten = discountCalculator(<span class="token-number">10</span>);
+<span class="token-comment">// Create a generic function 'twenty' that calculates 20% discount</span>
+<span class="token-keyword">let</span> twenty = discountCalculator(<span class="token-number">20</span>);
+
+<span class="token-comment">// Use the specialized functions</span>
+console.log(ten(<span class="token-number">300</span>)); <span class="token-comment">// 300 - 10% = 270</span>
+console.log(twenty(<span class="token-number">20000</span>)); <span class="token-comment">// 20000 - 20% = 16000</span>
+
+
+<span class="token-comment">// 3. Counter (Closure Example)</span>
+
+<span class="token-keyword">function</span> counter (){
+    <span class="token-keyword">let</span> count = <span class="token-number">0</span>; <span class="token-comment">// Private variable, inaccessible from outside</span>
+    
+    <span class="token-comment">// Return a function that has access to 'count'</span>
+    <span class="token-keyword">return</span> <span class="token-keyword">function</span>(){
+        count ++; <span class="token-comment">// Increment count</span>
+        <span class="token-keyword">return</span> count; <span class="token-comment">// Return new value</span>
+    }
+}
+
+<span class="token-comment">// Create a new independent counter</span>
+<span class="token-keyword">let</span> c = counter();
+
+console.log(c()); <span class="token-comment">// 1</span>
+console.log(c()); <span class="token-comment">// 2</span>
+console.log(c()); <span class="token-comment">// 3... it remembers the state.</span>
+
+
+<span class="token-comment">// 4. Pure Function Example</span>
+
+<span class="token-keyword">function</span> double(val){
+    <span class="token-comment">// Always returns same output for same input, no side effects -> Pure</span>
+    <span class="token-keyword">return</span> val * <span class="token-number">2</span>;
+}
+
+console.log(double(<span class="token-number">200</span>));
+
+
+<span class="token-comment">// 5. IIFE for Data Privacy</span>
+
+<span class="token-comment">// The function runs immediately. 'password' cannot be accessed outside this block.</span>
+(<span class="token-keyword">function</span> (){
+    <span class="token-keyword">const</span> password = <span class="token-string">"Secret Password"</span>
+    console.log(password);
+})();</code></pre>
+
+      <h3><code>Function Practice/script.js</code> (Q&A Snippets)</h3>
+      <pre><code class="javascript"><span class="token-comment">// Q1: Hoisting Demonstration</span>
+
+    abc(); <span class="token-comment">// Works! Function declaration is hoisted.</span>
+    <span class="token-keyword">function</span> abc(){
+        console.log(<span class="token-string">'Function Declaration'</span>);
+    }; 
+
+<span class="token-comment">// Q3: Arrow Function Conversion</span>
+
+    <span class="token-comment">// Define 'multiply' as an arrow function</span>
+    <span class="token-keyword">let</span> multiply = (a, b) => {
+        <span class="token-keyword">return</span> a * b; <span class="token-comment">// explicit return</span>
+    }
+    <span class="token-comment">// Call it</span>
+    console.log(multiply(<span class="token-number">20</span> , <span class="token-number">20</span>)); <span class="token-comment">// 400</span>
+    
+    
+<span class="token-comment">// Q4: Parameter vs Argument</span>
+
+    <span class="token-keyword">function</span> welcome(name) {  <span class="token-comment">// "name" is the Parameter (placeholder)</span>
+        console.log(name); 
+    }
+    welcome(<span class="token-string">"Bijoy"</span>)  <span class="token-comment">// "Bijoy" is the Argument (actual value passed)</span></code></pre>
+    </section>
+  </body>
+</html>
