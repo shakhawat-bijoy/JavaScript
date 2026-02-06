@@ -14,6 +14,8 @@ A comprehensive documentation of JavaScript fundamentals, from basics to advance
 6. [Function Practice - Q&A](#function-practice---qa)
 7. [Day 6 - Arrays & Advanced Methods](#day-6---arrays--advanced-methods)
 8. [Function Practice 2](#function-practice-2)
+9. [Interview Theory & Questions](#interview-theory--questions)
+10. [Notes](#notes)
 
 ---
 
@@ -591,6 +593,31 @@ function counter() {
 
 ---
 
+## Interview Theory & Questions
+
+A collection of interview questions and theoretical concepts.
+
+- **Hoisting**: Function declarations vs expressions
+- **Closures**: Practical examples and scope
+- **Event Loop**: Understanding asynchronous execution
+
+[View Interview Theory](Interview_Theory/Theory_and_Questions.md)
+
+---
+
+## Notes
+
+Comprehensive notes for beginners covering:
+
+- **Intro**: Basics of JavaScript
+- **DOM**: Document Object Model manipulation
+- **Events**: Handling user interactions
+- **Local Storage**: Persisting data
+
+[View Notes](notes/notes.html)
+
+---
+
 ## Best Practices Learned
 
 1. **Use `const` by default**, `let` when reassignment is needed
@@ -640,7 +667,9 @@ function counter() {
 │   ├── Advance/
 │   └── Arrays/
 ├── Function Practice/
-└── function practice 2/
+├── function practice 2/
+├── Interview_Theory/
+└── notes/
 ```
 
 ---
