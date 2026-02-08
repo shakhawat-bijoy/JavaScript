@@ -6,7 +6,9 @@
     <title>JavaScript Theory & Interview Questions</title>
     <style>
       body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
         line-height: 1.6;
         color: #d4d4d4;
         max-width: 900px;
@@ -14,7 +16,9 @@
         padding: 20px;
         background-color: #1e1e1e;
       }
-      h1, h2, h3 {
+      h1,
+      h2,
+      h3 {
         color: #569cd6;
       }
       h1 {
@@ -80,9 +84,21 @@
     </style>
   </head>
   <body>
-
     <h1>JavaScript Theory & Interview Questions</h1>
-    <p style="text-align: center; color: #858585;">Comprehensive Guide: Ordered by Question Number</p>
+    <p style="text-align: center; color: #858585">
+      Comprehensive Guide: 30+ Essential Interview Questions with Detailed
+      Explanations
+    </p>
+    <p
+      style="
+        text-align: center;
+        color: #4ec9b0;
+        font-size: 0.9em;
+        margin-top: -10px;
+      "
+    >
+      From Fundamentals to Advanced Concepts
+    </p>
 
     <!-- SECTION 1: Fundamentals (Q1-Q6) -->
     <section>
@@ -90,21 +106,46 @@
 
       <div class="question-box">
         <div class="question-header">
-          <span class="question-title">Function Declaration vs Expression</span>
+          <span class="question-title"
+            >Function Declaration vs Expression (Hoisting)</span
+          >
           <span class="q-number">Q1 - Q2</span>
         </div>
         <div class="answer-text">
-          <ul>
-            <li><strong>Function Declaration:</strong> Hoisted. Can be called <em>before</em> definition.</li>
-            <li><strong>Function Expression:</strong> Not hoisted. Must be defined before usage.</li>
-          </ul>
-<pre><code>// 1. Declaration (Works)
-greet(); 
+          <p>
+            <strong>Function Declaration:</strong> Fully hoisted (both name and
+            implementation) - can be called before it appears in code.
+          </p>
+          <p>
+            <strong>Function Expression:</strong> Variable is hoisted, but not
+            the function assignment - must be defined before calling.
+          </p>
+          <pre><code>// ✅ DECLARATION - Works (fully hoisted)
+greet(); // Output: "Hi"
 function greet() { console.log("Hi"); }
 
-// 2. Expression (Error)
-sayHi(); 
-var sayHi = function() { console.log("Hi"); }</code></pre>
+// ❌ EXPRESSION - Error (variable hoisted, but undefined)
+sayHi(); // TypeError: sayHi is not a function
+var sayHi = function() { console.log("Hi"); }
+
+// How hoisting actually works:
+// Behind the scenes:
+var sayHi;           // Variable declaration hoisted
+sayHi();             // Called here (but sayHi is undefined)
+sayHi = function() { // Assignment happens here
+  console.log("Hi");
+}</code></pre>
+          <p><strong>When to use:</strong></p>
+          <ul>
+            <li>
+              <strong>Declaration:</strong> When you need hoisting, or for
+              top-level utility functions
+            </li>
+            <li>
+              <strong>Expression:</strong> When you want to control when the
+              function is available, or for callbacks
+            </li>
+          </ul>
         </div>
       </div>
 
@@ -115,7 +156,7 @@ var sayHi = function() { console.log("Hi"); }</code></pre>
         </div>
         <div class="answer-text">
           <p>Concise syntax for functions.</p>
-<pre><code>let multiply = (a, b) => a * b;</code></pre>
+          <pre><code>let multiply = (a, b) => a * b;</code></pre>
         </div>
       </div>
 
@@ -125,11 +166,59 @@ var sayHi = function() { console.log("Hi"); }</code></pre>
           <span class="q-number">Q4</span>
         </div>
         <div class="answer-text">
-          <ul>
-            <li><strong>var:</strong> Function-scoped, hoisted, can be redeclared</li>
-            <li><strong>let:</strong> Block-scoped, hoisted but not initialized (TDZ), cannot be redeclared</li>
-            <li><strong>const:</strong> Block-scoped, must be initialized, cannot be reassigned</li>
-          </ul>
+          <table
+            style="
+              width: 100%;
+              border-collapse: collapse;
+              margin: 15px 0;
+              color: #cccccc;
+              font-size: 0.9em;
+            "
+          >
+            <tr style="border-bottom: 1px solid #444">
+              <th style="padding: 10px; text-align: left; color: #569cd6">
+                Feature
+              </th>
+              <th style="padding: 10px; text-align: left; color: #569cd6">
+                var
+              </th>
+              <th style="padding: 10px; text-align: left; color: #569cd6">
+                let
+              </th>
+              <th style="padding: 10px; text-align: left; color: #569cd6">
+                const
+              </th>
+            </tr>
+            <tr style="border-bottom: 1px solid #333">
+              <td style="padding: 10px">Scope</td>
+              <td style="padding: 10px">Function</td>
+              <td style="padding: 10px">Block</td>
+              <td style="padding: 10px">Block</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #333">
+              <td style="padding: 10px">Hoisting</td>
+              <td style="padding: 10px">Yes (undefined)</td>
+              <td style="padding: 10px">Yes (TDZ)</td>
+              <td style="padding: 10px">Yes (TDZ)</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #333">
+              <td style="padding: 10px">Redeclare</td>
+              <td style="padding: 10px">Allowed</td>
+              <td style="padding: 10px">No</td>
+              <td style="padding: 10px">No</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #333">
+              <td style="padding: 10px">Reassign</td>
+              <td style="padding: 10px">Allowed</td>
+              <td style="padding: 10px">Allowed</td>
+              <td style="padding: 10px">No</td>
+            </tr>
+          </table>
+          <pre><code>// Objects with const (Crucial!)
+const person = { name: "John" };
+person.name = "Jane";  // ✅ Allowed (modify property)
+person.age = 30;       // ✅ Allowed (add property)
+person = {};           // ❌ TypeError (reassigning variable)</code></pre>
         </div>
       </div>
 
@@ -139,8 +228,11 @@ var sayHi = function() { console.log("Hi"); }</code></pre>
           <span class="q-number">Q5</span>
         </div>
         <div class="answer-text">
-          <p>The time between entering a scope and the variable being declared where you cannot access the variable.</p>
-<pre><code>console.log(x); // ReferenceError (TDZ)
+          <p>
+            The time between entering a scope and the variable being declared
+            where you cannot access the variable.
+          </p>
+          <pre><code>console.log(x); // ReferenceError (TDZ)
 let x = 5;</code></pre>
         </div>
       </div>
@@ -153,9 +245,17 @@ let x = 5;</code></pre>
         <div class="answer-text">
           <ul>
             <li><strong>Global Scope:</strong> Accessible everywhere</li>
-            <li><strong>Function Scope:</strong> Accessible only within function (var)</li>
-            <li><strong>Block Scope:</strong> Accessible within {} (let, const)</li>
-            <li><strong>Lexical Scope:</strong> Inner functions can access outer function variables</li>
+            <li>
+              <strong>Function Scope:</strong> Accessible only within function
+              (var)
+            </li>
+            <li>
+              <strong>Block Scope:</strong> Accessible within {} (let, const)
+            </li>
+            <li>
+              <strong>Lexical Scope:</strong> Inner functions can access outer
+              function variables
+            </li>
           </ul>
         </div>
       </div>
@@ -171,12 +271,37 @@ let x = 5;</code></pre>
           <span class="q-number">Q7</span>
         </div>
         <div class="answer-text">
-          <p>Refers to the object that is executing the current function.</p>
-          <ul>
-            <li>Method → Object</li>
-            <li>Function → Global/Window</li>
-            <li>Arrow Function → Parent Scope</li>
-          </ul>
+          <p>
+            The value of <code>this</code> depends on <strong>how</strong> a
+            function is called:
+          </p>
+          <ol>
+            <li>
+              <strong>Default:</strong> Global object (window) or
+              <code>undefined</code> (strict mode).
+            </li>
+            <li>
+              <strong>Implicit:</strong> The object left of the dot (e.g.,
+              <code>obj.method()</code>).
+            </li>
+            <li>
+              <strong>Explicit:</strong> Manually set via <code>call</code>,
+              <code>apply</code>, or <code>bind</code>.
+            </li>
+            <li>
+              <strong>Arrow Functions:</strong> Inherits <code>this</code> from
+              the lexical scope.
+            </li>
+          </ol>
+          <pre><code>// Common Gotcha Solution (Arrow Function)
+const person = {
+  name: "David",
+  greet: function() {
+    setTimeout(() => {
+      console.log(this.name); // "David" (lexical this)
+    }, 1000);
+  }
+};</code></pre>
         </div>
       </div>
 
@@ -187,9 +312,16 @@ let x = 5;</code></pre>
         </div>
         <div class="answer-text">
           <ul>
-            <li><strong>call():</strong> Invokes immediately (args comma-separated)</li>
-            <li><strong>apply():</strong> Invokes immediately (args as array)</li>
-            <li><strong>bind():</strong> Returns new function with bound context</li>
+            <li>
+              <strong>call():</strong> Invokes immediately (args
+              comma-separated)
+            </li>
+            <li>
+              <strong>apply():</strong> Invokes immediately (args as array)
+            </li>
+            <li>
+              <strong>bind():</strong> Returns new function with bound context
+            </li>
           </ul>
         </div>
       </div>
@@ -200,7 +332,10 @@ let x = 5;</code></pre>
           <span class="q-number">Q9</span>
         </div>
         <div class="answer-text">
-          <p>Arrow functions don't have their own <code>this</code> or <code>arguments</code> object and cannot be constructors.</p>
+          <p>
+            Arrow functions don't have their own <code>this</code> or
+            <code>arguments</code> object and cannot be constructors.
+          </p>
         </div>
       </div>
     </section>
@@ -215,7 +350,10 @@ let x = 5;</code></pre>
           <span class="q-number">Q10</span>
         </div>
         <div class="answer-text">
-          <p>Object representing completion/failure of async operation. States: Pending, Fulfilled, Rejected.</p>
+          <p>
+            Object representing completion/failure of async operation. States:
+            Pending, Fulfilled, Rejected.
+          </p>
         </div>
       </div>
 
@@ -225,7 +363,10 @@ let x = 5;</code></pre>
           <span class="q-number">Q11</span>
         </div>
         <div class="answer-text">
-          <p>Syntactic sugar for Promises. <code>await</code> pauses execution until Promise resolves.</p>
+          <p>
+            Syntactic sugar for Promises. <code>await</code> pauses execution
+            until Promise resolves.
+          </p>
         </div>
       </div>
 
@@ -236,7 +377,7 @@ let x = 5;</code></pre>
         </div>
         <div class="answer-text">
           <p>Extract values from arrays/objects into variables.</p>
-<pre><code>const { name, age } = person;
+          <pre><code>const { name, age } = person;
 const [first, second] = array;</code></pre>
         </div>
       </div>
@@ -258,7 +399,10 @@ const [first, second] = array;</code></pre>
           <span class="q-number">Q14</span>
         </div>
         <div class="answer-text">
-          <p>Backticks (`) allow string interpolation <code>${var}</code> and multi-line strings.</p>
+          <p>
+            Backticks (`) allow string interpolation <code>${var}</code> and
+            multi-line strings.
+          </p>
         </div>
       </div>
 
@@ -269,8 +413,12 @@ const [first, second] = array;</code></pre>
         </div>
         <div class="answer-text">
           <ul>
-            <li><strong>map:</strong> Returns a new array. Use for transformation.</li>
-            <li><strong>forEach:</strong> Returns undefined. Use for side effects.</li>
+            <li>
+              <strong>map:</strong> Returns a new array. Use for transformation.
+            </li>
+            <li>
+              <strong>forEach:</strong> Returns undefined. Use for side effects.
+            </li>
           </ul>
         </div>
       </div>
@@ -287,7 +435,10 @@ const [first, second] = array;</code></pre>
         </div>
         <div class="answer-text">
           <p><strong>Impure:</strong> Side effects (logs, global vars).</p>
-          <p><strong>Pure:</strong> No side effects. Output depends only on input.</p>
+          <p>
+            <strong>Pure:</strong> No side effects. Output depends only on
+            input.
+          </p>
         </div>
       </div>
 
@@ -297,11 +448,30 @@ const [first, second] = array;</code></pre>
           <span class="q-number">Q18, Q19</span>
         </div>
         <div class="answer-text">
-          <p>Function remembering its parent scope variables.</p>
-<pre><code>function outer() {
-    let count = 0;
-    return () => ++count;
-}</code></pre>
+          <p>
+            A function that "remembers" its lexical scope even after the outer
+            function has finished.
+          </p>
+          <pre><code>function outer() {
+  let count = 0;
+  return function inner() {
+    return ++count; // Remembers 'count'
+  };
+}
+const counter = outer();
+console.log(counter()); // 1
+console.log(counter()); // 2</code></pre>
+          <p><strong>Practical Uses:</strong></p>
+          <ul>
+            <li><strong>Data Privacy:</strong> Creating private variables.</li>
+            <li>
+              <strong>Factories:</strong> Functions that generate specific
+              behaviors.
+            </li>
+            <li>
+              <strong>Event Handlers:</strong> Preserving state in callbacks.
+            </li>
+          </ul>
         </div>
       </div>
 
@@ -348,7 +518,7 @@ const [first, second] = array;</code></pre>
           <span class="q-number">Q24</span>
         </div>
         <div class="answer-text">
-<pre><code>function counter (){
+          <pre><code>function counter (){
     let count = 0;
     return function(){ return ++count; }
 }</code></pre>
@@ -357,16 +527,295 @@ const [first, second] = array;</code></pre>
 
       <div class="question-box">
         <div class="question-header">
-          <span class="question-title">Coding: Discount HOF</span>
+          <span class="question-title"
+            >Coding: Discount HOF (Higher-Order Function)</span
+          >
           <span class="q-number">Q25</span>
         </div>
         <div class="answer-text">
-<pre><code>function discount(d) {
-    return (price) => price - (price * d/100);
-}</code></pre>
+          <p>Functions that take or return other functions.</p>
+          <pre><code>function createDiscount(percentage) {
+  return function(price) {
+    return price - (price * percentage / 100);
+  };
+}
+
+const tenPercentOff = createDiscount(10);
+console.log(tenPercentOff(100)); // 90
+
+// Arrow version:
+const discount = p => price => price * (1 - p/100);</code></pre>
         </div>
       </div>
     </section>
 
+    <!-- SECTION 6: Additional Important Questions (Q26-Q30) -->
+    <section>
+      <h2>Additional Important Interview Questions (Q26 - Q30)</h2>
+
+      <div class="question-box">
+        <div class="question-header">
+          <span class="question-title">Event Loop & Call Stack</span>
+          <span class="q-number">Q26</span>
+        </div>
+        <div class="answer-text">
+          <p>
+            JavaScript is <strong>single-threaded</strong> but handles async
+            operations through the event loop.
+          </p>
+          <p><strong>Components:</strong></p>
+          <ul>
+            <li>
+              <strong>Call Stack:</strong> Stores function execution contexts
+            </li>
+            <li>
+              <strong>Web APIs:</strong> Browser APIs (setTimeout, fetch, DOM
+              events)
+            </li>
+            <li>
+              <strong>Callback Queue:</strong> Stores callbacks ready to execute
+            </li>
+            <li>
+              <strong>Event Loop:</strong> Moves callbacks to call stack when
+              empty
+            </li>
+          </ul>
+          <pre><code>console.log('1');
+
+setTimeout(() => {
+  console.log('2');
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log('3');
+});
+
+console.log('4');
+
+// Output: 1, 4, 3, 2
+// Why?
+// - Synchronous code runs first: 1, 4
+// - Promises (microtasks) before setTimeout (macrotasks): 3
+// - setTimeout callback runs last: 2</code></pre>
+        </div>
+      </div>
+
+      <div class="question-box">
+        <div class="question-header">
+          <span class="question-title">== vs ===</span>
+          <span class="q-number">Q27</span>
+        </div>
+        <div class="answer-text">
+          <ul>
+            <li>
+              <strong>== (Loose Equality):</strong> Compares values after type
+              coercion
+            </li>
+            <li>
+              <strong>=== (Strict Equality):</strong> Compares both value and
+              type (no coercion)
+            </li>
+          </ul>
+          <pre><code>// Loose Equality (==)
+5 == "5"           // true (coerced)
+0 == false         // true
+null == undefined  // true
+
+// Strict Equality (===)
+5 === "5"          // false (different types)
+0 === false        // false
+null === undefined // false
+
+// Best Practice: Always use === unless you need coercion</code></pre>
+        </div>
+      </div>
+
+      <div class="question-box">
+        <div class="question-header">
+          <span class="question-title">null vs undefined</span>
+          <span class="q-number">Q28</span>
+        </div>
+        <div class="answer-text">
+          <p>
+            <strong>undefined:</strong> Default value for uninitialized
+            variables (automatic)
+          </p>
+          <p>
+            <strong>null:</strong> Intentional absence of value (must be
+            assigned)
+          </p>
+          <pre><code>let x;
+console.log(x); // undefined (not initialized)
+
+let y = null;
+console.log(y); // null (intentionally empty)
+
+function test() {}
+console.log(test()); // undefined (no return)
+
+const obj = { name: "John" };
+console.log(obj.age); // undefined (doesn't exist)
+
+// Type checking
+typeof undefined  // "undefined"
+typeof null       // "object" (JS bug!)</code></pre>
+        </div>
+      </div>
+
+      <div class="question-box">
+        <div class="question-header">
+          <span class="question-title">Deep Copy vs Shallow Copy</span>
+          <span class="q-number">Q29</span>
+        </div>
+        <div class="answer-text">
+          <p><strong>Shallow Copy</strong> (only copies first level):</p>
+          <pre><code>const original = { name: "John", address: { city: "NYC" } };
+
+// Spread operator or Object.assign()
+const copy = { ...original };
+
+// Problem: Nested objects still referenced
+copy.address.city = "LA";
+console.log(original.address.city); // "LA" (modified!)</code></pre>
+          <p><strong>Deep Copy</strong> (copies all levels):</p>
+          <pre><code>// Method 1: JSON (simple objects only)
+const deepCopy1 = JSON.parse(JSON.stringify(original));
+
+// Method 2: Recursive function
+function deepClone(obj) {
+  if (obj === null || typeof obj !== 'object') return obj;
+  const clone = Array.isArray(obj) ? [] : {};
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      clone[key] = deepClone(obj[key]);
+    }
+  }
+  return clone;
+}
+
+// Method 3: structuredClone (modern browsers)
+const deepCopy3 = structuredClone(original);</code></pre>
+        </div>
+      </div>
+
+      <div class="question-box">
+        <div class="question-header">
+          <span class="question-title">Array Methods Comparison</span>
+          <span class="q-number">Q30</span>
+        </div>
+        <div class="answer-text">
+          <pre><code>const numbers = [1, 2, 3, 4, 5];
+
+// forEach: Iterate (no return value)
+numbers.forEach(num => console.log(num));
+// Returns: undefined
+
+// map: Transform (returns new array)
+const doubled = numbers.map(num => num * 2);
+// Returns: [2, 4, 6, 8, 10]
+
+// filter: Keep elements that pass test
+const evens = numbers.filter(num => num % 2 === 0);
+// Returns: [2, 4]
+
+// reduce: Reduce to single value
+const sum = numbers.reduce((acc, num) => acc + num, 0);
+// Returns: 15
+
+// find: Return first match
+const firstEven = numbers.find(num => num % 2 === 0);
+// Returns: 2
+
+// some: Check if ANY passes
+const hasEven = numbers.some(num => num % 2 === 0);
+// Returns: true
+
+// every: Check if ALL pass
+const allPositive = numbers.every(num => num > 0);
+// Returns: true</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tips and Resources Section -->
+    <section
+      style="margin-top: 60px; padding-top: 30px; border-top: 2px solid #333"
+    >
+      <h2 style="color: #ce9178">💡 Tips for Interview Success</h2>
+      <div
+        style="
+          background-color: #252526;
+          padding: 20px;
+          border-radius: 8px;
+          border-left: 5px solid #4ec9b0;
+        "
+      >
+        <ul style="color: #cccccc; line-height: 1.8">
+          <li>
+            <strong>Understand, don't memorize:</strong> Focus on understanding
+            concepts deeply
+          </li>
+          <li>
+            <strong>Practice examples:</strong> Write code examples for each
+            concept
+          </li>
+          <li>
+            <strong>Think out loud:</strong> Explain your reasoning during
+            interviews
+          </li>
+          <li>
+            <strong>Ask clarifying questions:</strong> Ensure you understand
+            what's being asked
+          </li>
+          <li>
+            <strong>Consider edge cases:</strong> Think about unusual inputs and
+            scenarios
+          </li>
+          <li>
+            <strong>Know trade-offs:</strong> Understand pros and cons of
+            different approaches
+          </li>
+          <li>
+            <strong>Stay updated:</strong> JavaScript evolves - learn modern
+            features
+          </li>
+        </ul>
+      </div>
+
+      <h2 style="color: #ce9178; margin-top: 40px">📚 Additional Resources</h2>
+      <div
+        style="
+          background-color: #252526;
+          padding: 20px;
+          border-radius: 8px;
+          border-left: 5px solid #569cd6;
+        "
+      >
+        <ul style="color: #cccccc; line-height: 1.8">
+          <li>
+            <strong>MDN Web Docs:</strong> Comprehensive JavaScript reference
+          </li>
+          <li><strong>JavaScript.info:</strong> Modern JavaScript tutorial</li>
+          <li><strong>You Don't Know JS:</strong> Deep dive book series</li>
+          <li>
+            <strong>LeetCode/HackerRank:</strong> Practice coding challenges
+          </li>
+        </ul>
+      </div>
+
+      <div
+        style="
+          text-align: center;
+          margin-top: 50px;
+          padding: 30px;
+          background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
+          border-radius: 10px;
+        "
+      >
+        <p style="color: #4ec9b0; font-size: 1.2em; margin: 0">
+          ✨ <strong>Questions Covered: 30+</strong> ✨
+        </p>
+      </div>
+    </section>
   </body>
 </html>
